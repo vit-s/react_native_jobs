@@ -7,7 +7,7 @@ import { icons, SIZES }                                             from "../../
 const jobTypes = ["Full-time", "Part-time", "Contractor"]
 
 const Welcome = () => {
-  const router = useRouter()
+  const router                            = useRouter()
   const [activeJobType, setActiveJobType] = useState("Full-time")
   return (
     <View>
@@ -20,13 +20,15 @@ const Welcome = () => {
           <TextInput
             style={styles.searchInput}
             value={''}
-            onchange={() => {}}
+            onchange={() => {
+            }}
             placeholder="What are you looking for?"
           />
         </View>
-        <TouchableOpacity style={styles.searchBtn} onPress={() => {}}>
+        <TouchableOpacity style={styles.searchBtn} onPress={() => {
+        }}>
           <Image
-            src={icons.search}
+            source={icons.search}
             resizeMode={'contain'}
             style={styles.searchBtnImage}
           />
@@ -43,7 +45,7 @@ const Welcome = () => {
                 router.push(`/search/${item}`)
               }}
             >
-              <Text style={styles.tabText(activeJobType)}>{item}</Text>
+              <Text style={styles.tabText(activeJobType, item)}>{item}</Text>
             </TouchableOpacity>
           )}
           keyExtractor={item => item}

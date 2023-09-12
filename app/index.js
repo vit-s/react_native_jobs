@@ -8,23 +8,31 @@ const Home = () => {
   const router = useRouter()
 
   return (
-    <SafeAreaView styles={{flex: 1, background: COLORS.lightWhite}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
       <Stack.Screen
         options={{
-          headerStyle: {background: COLORS.lightWhite},
+          headerStyle: { backgroundColor: COLORS.lightWhite },
           headerShadowVisible: false,
-          headerLeft: () => (<ScreenHeaderBtn iconUrl={icons.menu} dimension={`60%`}/>),
-          headerRight: () => (<ScreenHeaderBtn iconUrl={images.profile} dimension={`100%`}/>),
-          headerTitle: ''
+          headerLeft: () => (
+            <ScreenHeaderBtn iconUrl={icons.menu} dimension='60%' />
+          ),
+          headerRight: () => (
+            <ScreenHeaderBtn iconUrl={images.profile} dimension='100%' />
+          ),
+          headerTitle: "",
         }}
       />
-      <ScrollView showVerticalScrollIndicator={false}>
-        <View style={{flex: 1, padding: SIZES.medium}}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View
+          style={{
+            flex: 1,
+            padding: SIZES.medium,
+          }}
+        >
           <Welcome
-
           />
-          <Popularjobs/>
-          <Nearbyjobs/>
+          <Popularjobs />
+          <Nearbyjobs />
         </View>
       </ScrollView>
     </SafeAreaView>
