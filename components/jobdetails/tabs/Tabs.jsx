@@ -7,7 +7,7 @@ import { SIZES } from "../../../constants"
 const TabButton = ({name, activeTab, onHandleSearchType}) => (
   <TouchableOpacity
     style={styles.btn(name, activeTab)}
-    onPress={() => onHandleSearchType}
+    onPress={onHandleSearchType}
   >
     <Text style={styles.btnText(name, activeTab)}>{name}</Text>
   </TouchableOpacity>
@@ -18,6 +18,8 @@ const Tabs = ({tabs, activeTab, setActiveTab}) => {
     <View style={styles.container}>
       <FlatList
         data={tabs}
+        horizontal
+        showsHorizontalScrollIndicator={false}
         renderItem={({item}) => (
           <TabButton
             name={item}
@@ -25,10 +27,8 @@ const Tabs = ({tabs, activeTab, setActiveTab}) => {
             onHandleSearchType={() => setActiveTab(item)}
           />
         )}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        keyExtractor={item => item}
         contentContainerStyle={{columnGap: SIZES.small/2}}
+        keyExtractor={item => item}
       />
     </View>
   )
